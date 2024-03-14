@@ -1,9 +1,17 @@
 <keymap version="1" name="Custom Keymap" parent="$default">
-  <action id="ActivateCommitToolWindow">
-    <keyboard-shortcut first-keystroke="alt k" />
+  <action id="ActivateCommitToolWindow" />
+  <action id="ActivateDatabaseToolWindow">
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt b" />
   </action>
   <action id="ActivateDebugToolWindow">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt d" />
+  </action>
+  <action id="ActivateMergeRequestsToolWindow">
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt m" />
+  </action>
+  <action id="ActivateNuGetToolWindow">
+    <keyboard-shortcut first-keystroke="shift alt 7" />
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt n" />
   </action>
   <action id="ActivateProblemsViewToolWindow">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt p" />
@@ -14,12 +22,25 @@
   <action id="ActivateRunToolWindow">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt r" />
   </action>
+  <action id="ActivateServicesToolWindow">
+    <keyboard-shortcut first-keystroke="alt 8" />
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt s" />
+  </action>
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="alt t" />
+  </action>
+  <action id="ActivateUnitTestsCoverageToolWindow">
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt k" />
+  </action>
+  <action id="ActivateUnitTestsToolWindow">
+    <keyboard-shortcut first-keystroke="shift alt 8" />
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt t" />
   </action>
   <action id="ActivateVersionControlToolWindow">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt g" />
   </action>
+  <action id="ChangesView.ToggleCommitUi" />
+  <action id="CheckinProject" />
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="ctrl alt q" />
   </action>
@@ -32,10 +53,15 @@
     <keyboard-shortcut first-keystroke="alt r" second-keystroke="alt d" />
   </action>
   <action id="EditorContextInfo" />
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="alt insert" />
+  </action>
   <action id="Git.Branches">
     <keyboard-shortcut first-keystroke="shift ctrl back_quote" />
     <keyboard-shortcut first-keystroke="alt g" second-keystroke="alt b" />
   </action>
+  <action id="Git.Commit.Stage" />
+  <action id="GotoClass" />
   <action id="GotoDeclaration">
     <keyboard-shortcut first-keystroke="ctrl b" />
     <mouse-shortcut keystroke="control button1" />
@@ -47,8 +73,17 @@
     <mouse-shortcut keystroke="control alt button1" />
     <keyboard-shortcut first-keystroke="alt n" second-keystroke="alt i" />
   </action>
+  <action id="GotoTest" />
   <action id="Jdbc.OpenConsole.New" />
   <action id="Jdbc.OpenConsole.New.Generate" />
+  <action id="NavigateToImmediateWindow" />
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="NewElementMenu">
+    <keyboard-shortcut first-keystroke="alt a" second-keystroke="alt n" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="alt right" />
     <keyboard-shortcut first-keystroke="alt l" />
@@ -57,15 +92,62 @@
     <keyboard-shortcut first-keystroke="alt left" />
     <keyboard-shortcut first-keystroke="alt h" />
   </action>
-  <action id="ReopenClosedTab">
+  <action id="QuickJavaDoc">
+    <keyboard-shortcut first-keystroke="ctrl q" />
+    <mouse-shortcut keystroke="alt button2" />
+    <keyboard-shortcut first-keystroke="alt s" />
+  </action>
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt t" />
     <keyboard-shortcut first-keystroke="alt r" second-keystroke="alt t" />
+  </action>
+  <action id="ReformatWithPrettierAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt p" />
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="shift ctrl t" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f9" />
+    <keyboard-shortcut first-keystroke="alt c" />
+  </action>
+  <action id="RiderRemoveAllLineBreakpoints">
+    <keyboard-shortcut first-keystroke="shift ctrl f9" />
+    <keyboard-shortcut first-keystroke="alt d" second-keystroke="alt q" />
+  </action>
+  <action id="RiderUnitTestCoverContextAction">
+    <keyboard-shortcut first-keystroke="alt u" second-keystroke="alt c" />
+  </action>
+  <action id="RiderUnitTestCoverSolutionTwAction">
+    <keyboard-shortcut first-keystroke="alt u" second-keystroke="alt a" />
+  </action>
+  <action id="RiderUnitTestDebugContextAction">
+    <keyboard-shortcut first-keystroke="ctrl semicolon" second-keystroke="d" />
+    <keyboard-shortcut first-keystroke="ctrl semicolon" second-keystroke="ctrl d" />
+    <keyboard-shortcut first-keystroke="alt u" second-keystroke="alt d" />
+  </action>
+  <action id="RiderUnitTestRunContextAction">
+    <keyboard-shortcut first-keystroke="ctrl semicolon" second-keystroke="r" />
+    <keyboard-shortcut first-keystroke="ctrl semicolon" second-keystroke="ctrl r" />
+    <keyboard-shortcut first-keystroke="shift ctrl f10" />
+    <keyboard-shortcut first-keystroke="alt u" second-keystroke="alt t" />
   </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
     <keyboard-shortcut first-keystroke="alt r" second-keystroke="alt n" />
   </action>
+  <action id="ServiceView.ShowServices" />
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt w" />
+  </action>
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="f7" />
+    <keyboard-shortcut first-keystroke="alt i" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="f8" />
+    <keyboard-shortcut first-keystroke="alt k" />
   </action>
   <action id="Stop">
     <keyboard-shortcut first-keystroke="ctrl f2" />
@@ -85,6 +167,11 @@
     <keyboard-shortcut first-keystroke="shift alt close_bracket" />
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt l" />
   </action>
+  <action id="Terminal.NewTab" />
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="ctrl f8" />
+    <keyboard-shortcut first-keystroke="alt d" second-keystroke="alt b" />
+  </action>
   <action id="ToggleRenderedDocPresentation" />
   <action id="Unsplit">
     <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt u" />
@@ -93,5 +180,9 @@
     <keyboard-shortcut first-keystroke="shift back_quote" />
   </action>
   <action id="context.load" />
+  <action id="copilot.chat.show">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
+    <keyboard-shortcut first-keystroke="alt w" second-keystroke="alt c" />
+  </action>
   <action id="copilot.disposeInlays" />
 </keymap>
