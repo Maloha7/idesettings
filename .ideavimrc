@@ -1,6 +1,99 @@
-inoremap lj <Esc>
+" Set space as the leader key
+let mapleader = " "
+
 set NERDTree
+set surround
+
+
+" Which key
+set which-key
+set notimeout
+let g:WhichKeyDesc_search        = "<leader><leader> Search Everywhere"
+let g:WhichKeyDesc_find        = "<leader>f Find"
+let g:WhichKeyDesc_file        = "<leader>ff  Find File"
+let g:WhichKeyDesc_usages        = "<leader>fu Find Usages"
+let g:WhichKeyDesc_actions        = "<leader>fa  Find Actions"
+
+let g:WhichKeyDesc_goto        = "<leader>g Goto"
+let g:WhichKeyDesc_declaration        = "<leader>gd  Goto Declaration"
+let g:WhichKeyDesc_implementation        = "<leader>gi Goto Implementation"
+let g:WhichKeyDesc_git        = "<leader>gg  Goto LazyGit"
+let g:WhichKeyDesc_next        = "<leader>gn  Goto Next Error"
+let g:WhichKeyDesc_prev        = "<leader>gp Goto Previous Error"
+
+let g:WhichKeyDesc_window        = "<leader>w  Window"
+let g:WhichKeyDesc_delete        = "<leader>wd Window Delete"
+let g:WhichKeyDesc_split        = "<leader>wv Window Split Vertically"
+
+let g:WhichKeyDesc_explorer        = "<leader>e Explorer"
+
+let g:WhichKeyDesc_tools        = "<leader>t Tools"
+let g:WhichKeyDesc_terminal        = "<leader>tt Terminal"
+
+let g:WhichKeyDesc_run        = "<leader>r Run"
+let g:WhichKeyDesc_anything        = "<leader>ra Run Anything"
+let g:WhichKeyDesc_normal        = "<leader>rn Run Normal"
+let g:WhichKeyDesc_debugger        = "<leader>rd  Run Debugger"
+let g:WhichKeyDesc_stop        = "<leader>rs Run Stop"
+
+let g:WhichKeyDesc_refactor        = "<leader>R Refactor"
+
+" Make ctr c and v work
 vmap <C-c> "+yi
-vmap <C-x> "+c
+vmap <C-x> "+
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+" Yank to system clipboard
+nnoremap y "+y
+vnoremap y "+y
+
+" Don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" Paste from system clipboard
+" nnoremap p "+p
+" vnoremap p "+p
+" Remap window navigation
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <S-L> :action NextTab<CR>
+nnoremap <S-H> :action PreviousTab<CR>
+
+" change font size
+nmap + :action EditorIncreaseFontSize<CR>
+nmap - :action EditorDecreaseFontSize<CR>
+nmap <leader>= :action EditorResetFontSize<CR>
+
+" Keymaps
+" Navigation
+nnoremap <leader><leader> :action SearchEverywhere<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>gne :action GotoNextError<CR>
+nnoremap <leader>gpe :action GotoPreviousError<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>fu :action FindUsages<CR>
+
+" Editing
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>wv <C-W>v
+nnoremap <leader>wd <C-W>c
+nnoremap <C-W> :action CloseEditor<CR>
+nnoremap <leader>R :action RefactoringMenu<CR>
+
+" Run and Debug
+nnoremap <leader>rn :action Run<CR>
+nnoremap <leader>rd :action Debug<CR>
+nnoremap <leader>rs :action Stop<CR>
+nnoremap <leader>ra :action RunAnything<CR>
+
+" Toolwindows
+nnoremap <leader>gg  :action LazyGit.Open<CR>
+nnoremap <leader>tt  :action ActivateTerminalToolWindow<CR>
